@@ -1,0 +1,47 @@
+@keyframes moveBtnFromBottom {
+  0% {
+    opacity: 0;
+    transform: translateY(3rem);
+  }
+  100% {
+    opacity: 1;
+    transform: translateY(0);
+  }
+}
+
+/*анимация движения слева направо*/
+@keyframes MoveFromLeft {
+  /*start*/
+  0% {
+    /*на старте анимации текст невидим*/
+    opacity: 0;
+    /*текст выезжает слева направо потому отрицательное значение */
+    transform: translateX(-10rem);
+  }
+  80% {
+    transform: translateX(1rem);
+  }
+  /*finish*/
+  100% {
+    opacity: 1;
+    transform: translateX(0);
+  }
+}
+
+@keyframes MoveFromRight {
+  /*start*/
+  0% {
+    /*на старте анимации текст невидим*/
+    opacity: 0;
+    /*текст выезжает слева направо потому отрицательное значение */
+    transform: translateX(10rem);
+  }
+  80% {
+    transform: translateX(-1rem);
+  }
+  /*finish*/
+  100% {
+    opacity: 1;
+    transform: translateX(0);
+  }
+}

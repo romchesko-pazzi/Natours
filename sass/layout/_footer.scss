@@ -1,0 +1,57 @@
+.footer {
+  height: 63rem;
+  background-color: #333;
+  padding: 10rem 0;
+  font-size: 1.4rem;
+  color: $color-grey-light-1;
+
+  &__logo-box {
+    margin-bottom: 8rem;
+  }
+
+  &__logo {
+  }
+
+  &__navigation {
+    color: #fff;
+    text-transform: uppercase;
+    border-top: .1rem $color-grey-dark solid;
+    padding-top: 2rem;
+    display: inline-block; // чтобы бордер сверху и контент были на одном уровне
+  }
+
+  &__item {
+    display: inline-block;
+
+    &:not(:last-child) {
+      margin-right: 1.5rem;
+    }
+  }
+
+  &__link {
+    text-decoration: none;
+    text-transform: uppercase;
+    display: inline-block;
+    transition: transform .3s;
+    color: inherit;
+
+    &:hover {
+      transform: rotate(5deg) scale(1.3);
+      z-index: 3;
+      color: $color-primary;
+      box-shadow: 0 1rem 2rem rgba($color-black, .4);
+      background-color: #333; // чтобы текст не был прозрачным
+    }
+  }
+
+  &__copyright {
+    border-top: .1rem $color-grey-dark solid;
+    padding-top: 2rem;
+    float: right;
+    width: 84%;
+  }
+
+  &__contact:not(:last-child) {
+    margin-right: 1.5rem;
+  }
+}

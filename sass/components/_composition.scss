@@ -1,0 +1,40 @@
+.composition {
+  position: relative;
+
+  &__photo {
+    z-index: 0;
+    width: 55%; // задаём размер картинкам
+    box-shadow: $default-box-shadow;;
+    border-radius: .2rem;
+    position: absolute;
+    transition: all .2s; // плавный переход при ховере
+    outline-offset: 2rem; // смещение контура бордера
+
+    &--p1 {
+      top: -2rem;
+      left: 0;
+    }
+
+    &--p2 {
+      top: 2rem;
+      right: 0;
+    }
+
+    &--p3 {
+      top: 10rem;
+      left: 20%;
+    }
+
+    &:hover {
+      outline: 1.5rem solid $color-primary;
+      z-index: 1;
+      transform: scale(1.05) translateY(-0.5rem); // увеличивает картинку в размерах
+      box-shadow: 0 1.575rem 4.2rem rgba($color-black, .42);
+    }
+  }
+
+  // когда мы наводим на картинку, другие картинки (not hovered) берут это свойство
+  &:hover &__photo:not(:hover) {
+    transform: scale(.95);
+  }
+}

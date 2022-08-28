@@ -10,9 +10,26 @@
 /*1rem === 10px*/
 /*меняем пиксели на rem = 60px = 60/10 = 6rem */
 /*размер нужно ставить в процентах, дефолт-16px(100%),
-но если нам нужен кастомный, допустим 10px -> 10 / 16 = 0.625 = 62.5%*/
+но если нам нужен кастомный, допустим 10px -> 10px / 16px = 0.625 = 62.5%*/
 html {
   font-size: 62.5%;
+
+  // важна очередность т.к (<1200px and <900px) == конфликт
+  @include respond(tab-land) { // if width < 1200px apply it <-
+    font-size: 56.25%; // 1rem === 9px, 9/16 = 56.25%
+  }
+
+  @include respond(tab-port) { // if width < 900px apply it <-
+    font-size: 50%; // 1rem === 8px, 8/16 = 50%
+  }
+
+  @include respond(phone) { // if width < 600px apply it <-
+    font-size: 37.5%; // 1rem === 6px, 6/16 = 37.5%
+  }
+
+  @include respond(big-desktop) {
+    font-size: 75%; // 1rem === 12px, 12/16 = 75%
+  }
 }
 
 body {

@@ -1,0 +1,84 @@
+.popup {
+  height: 100vh;
+  width: 100%;
+  position: fixed;
+  top: 0;
+  left: 0;
+  z-index: 250;
+  background-color: rgba($color-black, .8);
+  transition: all .3s;
+
+  opacity: 0;
+  visibility: hidden;
+
+  &__content {
+    display: table;
+    @include center;
+
+    width: 75%;
+    background-color: $color-white;
+    box-shadow: 0 2rem 4rem rgba($color-black, .2);
+    border-radius: .5rem;
+    overflow: hidden; // фиксит пропадание бордера
+
+    // изначально контент прозрачный
+    transform: translate(-50%, -50%) scale(.25);
+    opacity: 0;
+    transition: all .5s;
+  }
+
+  &__left {
+    display: table-cell;
+    width: 33.3%;
+  }
+
+  &__img {
+    display: block; // img по умолчанию строчный
+    width: 100%;
+  }
+
+  &__right {
+    display: table-cell;
+    vertical-align: middle;
+    width: 66.7%;
+
+    background-color: $color-white;
+    padding: 3rem 5rem;
+  }
+
+  &__text {
+    font-size: 1.4rem;
+    column-count: 2;
+    column-gap: 4rem;
+    column-rule: .1rem solid $color-grey-medium;
+    hyphens: auto;
+  }
+
+  // open-close popup functionality
+  &:target {
+    opacity: 1;
+    visibility: visible;
+  }
+
+  // когда жмётся кнопка #popup контент становится непрозрачным и return to basic state params
+  &:target &__content {
+    opacity: 1;
+    transform: translate(-50%, -50%) scale(1);
+  }
+
+  &__close {
+    color: $color-grey-dark;
+    position: absolute;
+    top: 2.5rem;
+    right: 2.5rem;
+    line-height: 1; // &times - имеет свою высоту -> фиксит чтобы крест располагался ровно справа сверху
+    text-decoration: none;
+    font-size: 3.5rem;
+    transition: color .2s;
+
+    &:hover {
+      color: #ff5353;
+    }
+  }
+
+}

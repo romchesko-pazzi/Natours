@@ -23,10 +23,6 @@ html {
     font-size: 50%; // 1rem === 8px, 8/16 = 50%
   }
 
-  @include respond(phone) { // if width < 600px apply it <-
-    font-size: 37.5%; // 1rem === 6px, 6/16 = 37.5%
-  }
-
   @include respond(big-desktop) {
     font-size: 75%; // 1rem === 12px, 12/16 = 75%
   }
@@ -38,5 +34,10 @@ body {
   color: #777;
   font-weight: 400;
   line-height: 1.7;
-  padding: 3rem; /*не наследуется*/
+  padding: 3rem; /*не наследуется*/ // белый бордер
+
+  @include respond(tab-port) {
+    padding: 0;
+  }
+
 }

@@ -17,10 +17,6 @@
     font-size: 4rem;
     text-align: center;
 
-    &--front {
-
-    }
-
     &--back {
       transform: rotateY(180deg); // изначально развёрнут
 
@@ -68,7 +64,6 @@
       background-image: linear-gradient(to right bottom, $color-blue-light, $color-blue-dark),
       url("../img/nat-7.jpg");
     }
-
   }
 
   &__heading {
@@ -145,5 +140,45 @@
   &__price-value {
     font-size: 6rem;
     font-weight: 300;
+  }
+
+  // ===========================================================================================================
+  @include respond(tab-port) {
+    height: auto;
+    border-radius: $small-border-radius;
+    box-shadow: $default-box-shadow;
+    background-color: white;
+
+    &__side {
+      height: auto;
+      position: relative;
+      box-shadow: none;
+
+      &--back {
+        transform: rotateY(0deg); // изначально развёрнут
+        clip-path: polygon(0 15%, 100% 0%, 100% 100%, 0% 100%);
+      }
+    }
+
+    &:hover &__side--front {
+      transform: rotateY(0deg); // разворачиваем блок front и видим back
+    }
+
+    &__content-back {
+      position: relative;
+      top: 0;
+      left: 0;
+      transform: translate(0);
+      width: 100%;
+      padding: 7rem 4rem 4rem 4rem;
+    }
+
+    &__price-box {
+      margin-bottom: 3rem;
+    }
+
+    &__price-value {
+      font-size: 5rem;
+    }
   }
 }

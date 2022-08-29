@@ -11,9 +11,10 @@
 
   &__logo-box {
     margin-bottom: 8rem;
-  }
 
-  &__logo {
+    @include respond(tab-port) {
+      margin-bottom: $gutter-vertical-6;
+    }
   }
 
   &__navigation {
@@ -27,7 +28,6 @@
       width: 100%;
       text-align: center;
     }
-
   }
 
   &__item {
@@ -64,7 +64,6 @@
       width: 100%;
       text-align: center;
     }
-
   }
 
   &__contact:not(:last-child) {

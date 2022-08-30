@@ -380,10 +380,11 @@ body {
   top: 0;
   left: 0;
   z-index: 250;
-  background-color: rgba(0, 0, 0, 0.8);
+  background-color: rgba(155, 155, 155, 0.7);
   transition: all .3s;
   opacity: 0;
-  visibility: hidden; }
+  visibility: hidden;
+  backdrop-filter: blur(1rem); }
   .popup__content {
     display: table;
     position: absolute;

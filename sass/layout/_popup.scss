@@ -25,11 +25,20 @@
     transform: translate(-50%, -50%) scale(.25);
     opacity: 0;
     transition: all .5s;
+
+    @include respond(custom) {
+      display: block;
+    }
   }
 
   &__left {
     display: table-cell;
     width: 33.3%;
+
+    @include respond(custom) {
+      display: flex;
+      width: 100%;
+    }
   }
 
   &__img {
@@ -44,6 +53,10 @@
 
     background-color: $color-white;
     padding: 3rem 5rem;
+
+    @include respond(custom) {
+      width: 100%;
+    }
   }
 
   &__text {
@@ -52,6 +65,12 @@
     column-gap: 4rem;
     column-rule: .1rem solid $color-grey-medium;
     hyphens: auto;
+
+    @include respond(phone) {
+      font-size: 1.2rem;
+      hyphens: auto;
+      column-count: 1;
+    }
   }
 
   // open-close popup functionality
